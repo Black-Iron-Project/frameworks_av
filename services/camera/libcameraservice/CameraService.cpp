@@ -818,16 +818,8 @@ bool CameraService::checkPermission(const std::string& cameraId, const std::stri
             != permission::PermissionChecker::PERMISSION_HARD_DENIED;
 }
 
-bool CameraService::hasPermissionsForSystemCamera(const std::string& cameraId, int callingPid,
-        int callingUid) const{
-    AttributionSourceState attributionSource{};
-    attributionSource.pid = callingPid;
-    attributionSource.uid = callingUid;
-    bool checkPermissionForSystemCamera = checkPermission(cameraId,
-            sSystemCameraPermission, attributionSource, std::string(), AppOpsManager::OP_NONE);
-    bool checkPermissionForCamera = checkPermission(cameraId,
-            sCameraPermission, attributionSource, std::string(), AppOpsManager::OP_NONE);
-    return checkPermissionForSystemCamera && checkPermissionForCamera;
+static bool hasPermissionsForSystemCamera(int callingPid, int callingUid) {
+    return checkPermission(sCameraPermission, callingPid, callingUid);
 }
 
 bool CameraService::hasPermissionsForCameraHeadlessSystemUser(const std::string& cameraId,

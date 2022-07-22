@@ -124,6 +124,10 @@ cc_library {
         "camera_package_name_defaults",
         "camera_needs_client_info_lib_defaults",
         "camera_needs_client_info_lib_oplus_defaults",
+        "uses_oplus_camera_defaults",
+        "uses_nothing_camera_defaults",
+pp>>>>
+
     ],
     // Camera service source
 

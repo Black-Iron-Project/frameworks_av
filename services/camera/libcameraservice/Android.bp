@@ -127,11 +127,9 @@ cc_library {
         "uses_oppo_camera_defaults",
         "uses_nothing_camera_defaults",
         "uses_miui_camera_defaults",
-    ],
-
-    defaults: [
         "libcameraservice_deps",
     ],
+
     // Camera service source
 
     srcs: [

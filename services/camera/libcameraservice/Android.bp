@@ -119,14 +119,6 @@ cc_defaults {
 cc_library {
     name: "libcameraservice",
     defaults: [
-        "camera_needs_client_info_lib_defaults",
-        "camera_needs_client_info_lib_oplus_defaults",
-        "uses_oplus_camera_defaults",
-        "uses_oppo_camera_defaults",
-        "uses_nothing_camera_defaults",
-    ],
-
-    defaults: [
         "libcameraservice_deps",
         "camera_package_name_defaults",
         "camera_needs_client_info_lib_defaults",
@@ -134,6 +126,14 @@ cc_library {
         "includes_miui_camera",
         "needs_camera_boottime_defaults",
         "uses_miui_camera_defaults",
+        "uses_oplus_camera_defaults", 
+        "uses_oppo_camera_defaults",
+        "uses_nothing_camera_defaults",
+
+
+
+
+
     ],
     // Camera service source
 
